@@ -129,20 +129,6 @@ plot1 <- VariableFeaturePlot(dbmdbdb_combined )
 plot2 <-LabelPoints(plot = plot1, points = top10, repel = T, xnudge = 0, ynudge = 0)
 plot1+plot2
 
-
-
-#Scaling the data
-all.genes <- rownames(dbmdbdb_combined )
-dbmdbdb_combined  <- ScaleData(dbmdbdb_combined , features = all.genes)
-dbmdbdb_combined  <- ScaleData(dbmdbdb_combined )
-dbmdbdb_combined  <- ScaleData(dbmdbdb_combined , vars.to.regress = "percent.mt")
-dbmdbdb_combined  <- SCTransform(dbmdbdb_combined , features = all.genes)
-dbmdbdb_combined  <- SCTransform(dbmdbdb_combined )
-dbmdbdb_combined  <- SCTransform(dbmdbdb_combined , vars.to.regress = "percent.mt")
-
-
-
-
 #Dimensanality Reduction
 dbmdbdb_combined  <- RunPCA(dbmdbdb_combined , features = VariableFeatures(object = dbmdbdb_combined ))
 print(dbmdbdb_combined [["pca"]], dims = 1:10, nfeatures = 10)
