@@ -3,7 +3,6 @@ library(Seurat)
 library(patchwork)
 library(ggplot2)
 library(tidyverse)
-library(sctransform)
 
 # Load the PBMC dataset
 dbm_control1 <- Read10X(data.dir = "/home/gskbioinfo122/Desktop/dbm_control1/filtered_gene_bc_matrices/mm10/")
